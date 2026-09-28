@@ -1,12 +1,22 @@
 package com.pm.rolesecuritydemo.controller;
 
+import com.pm.rolesecuritydemo.model.AppUser;
+import com.pm.rolesecuritydemo.model.Role;
+import com.pm.rolesecuritydemo.service.AppUserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
 public class DemoController {
+
+    private final AppUserService appUserService;
+
+    public DemoController(AppUserService appUserService) {
+        this.appUserService = appUserService;
+    }
 
     @GetMapping("/api/public")
     public Map<String, String> publicEndpoint() {
@@ -17,11 +27,8 @@ public class DemoController {
     }
 
     @GetMapping("/api/guest")
-    public Map<String, String> guestEndpoint() {
-        return Map.of(
-                "message", "Guest endpoint'ine eriştin.",
-                "role", "GUEST"
-        );
+    public List<AppUser> guestEndpoint() {
+        return appUserService.getGuests(Role.GUEST);
     }
 
     @GetMapping("/api/user")
