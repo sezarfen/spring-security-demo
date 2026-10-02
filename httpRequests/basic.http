@@ -1,5 +1,5 @@
 ### GET request to example server
-GET http://localhost:8080/api/guest
-Authorization: Basic guest guest123
+GET http://localhost:8080/api/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGkiLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiRkFDVE9SX1BBU1NXT1JEIl0sImlhdCI6MTc5MDkzMjYzOCwiZXhwIjoxNzkwOTM2MjM4fQ.rOrLedhqBRd3U_8B9XxD7USv5xlJaW7WFyf51MQhJ5M
 
 ###

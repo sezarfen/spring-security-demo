@@ -13,5 +13,5 @@ public interface AppUserRepository extends JpaRepository<AppUser, String> {
 
     Optional<List<AppUser>> findByRole(Role role);
 
-    boolean existsByUsername(String username);
+    boolean existsByUsername(java.lang.String username);
 }
